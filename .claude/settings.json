@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx shadcn@latest init --help)",
       "Bash(npx shadcn@latest init --template vite -y)",
-      "Bash(npx shadcn@latest init --template vite -y -b radix)"
+      "Bash(npx shadcn@latest init --template vite -y -b radix)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }

@@ -1,0 +1,3 @@
+/* Re-export the global styles into the shadow DOM.
+   Vite resolves this import and inlines it into the content script bundle. */
+@import '../index.css';
