@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import type { ChatMessage } from '@/shared/types'
 import { detectPlatform } from '@/content/platforms'
+import FONTS_CSS from './fonts.css?inline'
 
 // ── types ──────────────────────────────────────────────────────────────────────
 
@@ -132,9 +133,6 @@ function AIIcon() {
 }
 
 // ── CSS injected into shadow root ──────────────────────────────────────────────
-
-const FONTS_HREF =
-  'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap'
 
 const CSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -484,8 +482,8 @@ export function FloatingNav({ messages, activeIndex, onNavigate }: FloatingNavPr
 
   return (
     <>
-      {/* Fonts — injected into shadow root so they work inside it */}
-      <link rel="stylesheet" href={FONTS_HREF} />
+      {/* Fonts — bundled locally, injected into shadow root as a style tag */}
+      <style>{FONTS_CSS}</style>
       <style>{CSS}</style>
 
       <div className={`tm-wrap${searchQuery.trim() ? ' tm-wrap--searching' : ''}`} ref={wrapRef}>

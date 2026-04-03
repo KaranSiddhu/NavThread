@@ -384,6 +384,16 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/geist/-/geist-5.2.8.tgz#7fe7b74934b5d680150ba5664ea147603d5a7c0c"
   integrity sha512-cJ6m9e+8MQ5dCYJsLylfZrgBh6KkG4bOLckB35Tr9J/EqdkEM6QllH5PxqP1dhTvFup+HtMRPuz9xOjxXJggxw==
 
+"@fontsource/dm-mono@^5.2.7":
+  version "5.2.7"
+  resolved "https://registry.yarnpkg.com/@fontsource/dm-mono/-/dm-mono-5.2.7.tgz#c732fe584a39f871aeab0ae49750a26f24b43477"
+  integrity sha512-Ma1az2atTVgQWuOWwjuxx26p/6A6CU9HBNKq1CFV6YKpKhpswnf9ry9Ql4+T6bTZzkdtSfS6tjJvqZOljVzIFQ==
+
+"@fontsource/outfit@^5.2.8":
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/outfit/-/outfit-5.2.8.tgz#03edbab365ff05222fbf3b7efd0894f47247765e"
+  integrity sha512-rXC6g0MqD7cOBjht0bMqc43qM6lRqDLML9KXsmg9uykz0wLQhy8Z/ajrMG6iyoT3NJR+MYgU+OEHp7uHoTb+Yw==
+
 "@hono/node-server@^1.19.9":
   version "1.19.12"
   resolved "https://registry.yarnpkg.com/@hono/node-server/-/node-server-1.19.12.tgz#dae075247959b6d7d2dba4c8bdc8c452ca0c7b40"

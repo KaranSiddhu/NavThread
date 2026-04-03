@@ -18,6 +18,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: false, // don't wipe the popup build
+    // Force all assets (woff2 fonts) to inline as base64 data URIs.
+    // This keeps the content script fully self-contained with no external requests.
+    assetsInlineLimit: 1_000_000,
     rollupOptions: {
       input: path.resolve(__dirname, 'src/content/index.ts'),
       output: {
