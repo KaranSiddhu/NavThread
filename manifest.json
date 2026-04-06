@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Navthread",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Floating navigation panel for long AI chats. Jump to any message instantly on ChatGPT, Claude, and Gemini without endless scrolling.",
   "icons": {
     "16": "icons/icon16.png",
