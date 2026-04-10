@@ -9,7 +9,8 @@ const SUPPORTED = [
 function sendVisibility(visible: boolean) {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const tabId = tabs[0]?.id;
-    if (tabId) chrome.tabs.sendMessage(tabId, { type: "SET_SIDEBAR_VISIBLE", visible });
+    if (tabId)
+      chrome.tabs.sendMessage(tabId, { type: "SET_SIDEBAR_VISIBLE", visible });
   });
 }
 
@@ -48,7 +49,7 @@ export function PopupApp() {
             borderRadius: 4,
           }}
         >
-          v0.1.0
+          v0.1.3
         </span>
       </div>
 
