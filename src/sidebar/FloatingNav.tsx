@@ -19,16 +19,7 @@ interface Turn {
 // ── helpers ────────────────────────────────────────────────────────────────────
 
 function formatTurnLabel(turn: Turn): string {
-  // Use the timestamp of the first message in the turn (user message)
-  const ts = turn.items[0]?.msg.timestamp
-  if (ts == null) return `Turn ${turn.turnNumber}`
-  return new Date(ts).toLocaleString(undefined, {
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-  })
+  return `Turn ${turn.turnNumber}`
 }
 
 function groupIntoTurns(messages: ChatMessage[]): Turn[] {

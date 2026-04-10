@@ -12,9 +12,21 @@ function App() {
   const [onChatPage, setOnChatPage] = useState(checkIsChatPage)
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [activeIndex, setActiveIndex] = useState(-1)
+  const [sidebarVisible, setSidebarVisible] = useState(true)
 
   const cleanupRef = useRef<(() => void) | null>(null)
   const ioRef = useRef<IntersectionObserver | null>(null)
+
+  // ── Popup message listener — sidebar visibility ───────────────────────────
+  useEffect(() => {
+    const listener = (message: { type: string; visible?: boolean }) => {
+      if (message.type === 'SET_SIDEBAR_VISIBLE' && typeof message.visible === 'boolean') {
+        setSidebarVisible(message.visible)
+      }
+    }
+    chrome.runtime.onMessage.addListener(listener)
+    return () => chrome.runtime.onMessage.removeListener(listener)
+  }, [])
 
   // ── SPA URL tracking ──────────────────────────────────────────────────────
   useEffect(() => {
@@ -79,7 +91,7 @@ function App() {
 
   const displayMessages = onChatPage ? messages : []
 
-  if (!onChatPage || displayMessages.length === 0) return null
+  if (!onChatPage || displayMessages.length === 0 || !sidebarVisible) return null
 
   return (
     <FloatingNav
